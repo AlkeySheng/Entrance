@@ -605,7 +605,7 @@ var nowTime ;
 		var time = new Date();
 		nowTime ="当前时间："+ time.getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate()+"日"+time.getHours()+"时"+time.getMinutes()+"分"+time.getSeconds()+"秒";
 		document.getElementById("times").innerHTML = nowTime;
-    document.getElementById("timeName").innerHTML = nowTime;
+    document.getElementById("timeName").innerHTML = "进入时间：" + time.getUTCDate() +time.getUTCTime();
 	}
 	setInterval(play,1000);//每一秒执行一次
 
