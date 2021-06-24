@@ -1,0 +1,1521 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<style type="text/css">
+#__vconsole {
+  color: #000;
+  font-size: 13px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  /* global */
+  /* compoment */
+}
+#__vconsole .vc-max-height {
+  max-height: 19.23076923em;
+}
+#__vconsole .vc-max-height-line {
+  max-height: 3.38461538em;
+}
+#__vconsole .vc-min-height {
+  min-height: 3.07692308em;
+}
+#__vconsole dd,
+#__vconsole dl,
+#__vconsole pre {
+  margin: 0;
+}
+#__vconsole .vc-switch {
+  display: block;
+  position: fixed;
+  right: 0.76923077em;
+  bottom: 0.76923077em;
+  color: #FFF;
+  background-color: #04BE02;
+  line-height: 1;
+  font-size: 1.07692308em;
+  padding: 0.61538462em 1.23076923em;
+  z-index: 10000;
+  border-radius: 0.30769231em;
+  box-shadow: 0 0 0.61538462em rgba(0, 0, 0, 0.4);
+}
+#__vconsole .vc-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 10001;
+  transition: background 0.3s;
+  -webkit-tap-highlight-color: transparent;
+  overflow-y: scroll;
+}
+#__vconsole .vc-panel {
+  display: none;
+  position: fixed;
+  min-height: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10002;
+  background-color: #EFEFF4;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+}
+#__vconsole .vc-tabbar {
+  border-bottom: 1px solid #D9D9D9;
+  overflow-x: auto;
+  height: 3em;
+  width: auto;
+  white-space: nowrap;
+}
+#__vconsole .vc-tabbar .vc-tab {
+  display: inline-block;
+  line-height: 3em;
+  padding: 0 1.15384615em;
+  border-right: 1px solid #D9D9D9;
+  text-decoration: none;
+  color: #000;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+#__vconsole .vc-tabbar .vc-tab:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+#__vconsole .vc-tabbar .vc-tab.vc-actived {
+  background-color: #FFF;
+}
+#__vconsole .vc-content {
+  background-color: #FFF;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 3.07692308em;
+  left: 0;
+  right: 0;
+  bottom: 3.07692308em;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: constant(safe-area-inset-bottom);
+  margin-bottom: env(safe-area-inset-bottom);
+}
+#__vconsole .vc-content.vc-has-topbar {
+  top: 5.46153846em;
+}
+#__vconsole .vc-topbar {
+  background-color: #FBF9FE;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-direction: row;
+  -webkit-flex-wrap: wrap;
+  width: 100%;
+}
+#__vconsole .vc-topbar .vc-toptab {
+  display: none;
+  flex: 1;
+  -webkit-box-flex: 1;
+  line-height: 2.30769231em;
+  padding: 0 1.15384615em;
+  border-bottom: 1px solid #D9D9D9;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+#__vconsole .vc-topbar .vc-toptab.vc-toggle {
+  display: block;
+}
+#__vconsole .vc-topbar .vc-toptab:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+#__vconsole .vc-topbar .vc-toptab.vc-actived {
+  border-bottom: 1px solid #3e82f7;
+}
+#__vconsole .vc-logbox {
+  display: none;
+  position: relative;
+  min-height: 100%;
+}
+#__vconsole .vc-logbox i {
+  font-style: normal;
+}
+#__vconsole .vc-logbox .vc-log {
+  padding-bottom: 3em;
+  -webkit-tap-highlight-color: transparent;
+}
+#__vconsole .vc-logbox .vc-log:empty:before {
+  content: "Empty";
+  color: #999;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1.15384615em;
+  text-align: center;
+}
+#__vconsole .vc-logbox .vc-item {
+  margin: 0;
+  padding: 0.46153846em 0.61538462em;
+  overflow: hidden;
+  line-height: 1.3;
+  border-bottom: 1px solid #EEE;
+  word-break: break-word;
+}
+#__vconsole .vc-logbox .vc-item-info {
+  color: #6A5ACD;
+}
+#__vconsole .vc-logbox .vc-item-debug {
+  color: #DAA520;
+}
+#__vconsole .vc-logbox .vc-item-warn {
+  color: #FFA500;
+  border-color: #FFB930;
+  background-color: #FFFACD;
+}
+#__vconsole .vc-logbox .vc-item-error {
+  color: #DC143C;
+  border-color: #F4A0AB;
+  background-color: #FFE4E1;
+}
+#__vconsole .vc-logbox .vc-log.vc-log-partly .vc-item {
+  display: none;
+}
+#__vconsole .vc-logbox .vc-log.vc-log-partly-log .vc-item-log,
+#__vconsole .vc-logbox .vc-log.vc-log-partly-info .vc-item-info,
+#__vconsole .vc-logbox .vc-log.vc-log-partly-warn .vc-item-warn,
+#__vconsole .vc-logbox .vc-log.vc-log-partly-error .vc-item-error {
+  display: block;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-content {
+  margin-right: 4.61538462em;
+  display: inline-block;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-repeat {
+  display: inline-block;
+  margin-right: 0.30769231em;
+  padding: 0 6.5px;
+  color: #D7E0EF;
+  background-color: #42597F;
+  border-radius: 8.66666667px;
+}
+#__vconsole .vc-logbox .vc-item.vc-item-error .vc-item-repeat {
+  color: #901818;
+  background-color: #DC2727;
+}
+#__vconsole .vc-logbox .vc-item.vc-item-warn .vc-item-repeat {
+  color: #987D20;
+  background-color: #F4BD02;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-code {
+  display: block;
+  white-space: pre-wrap;
+  overflow: auto;
+  position: relative;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-input,
+#__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output {
+  padding-left: 0.92307692em;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-input:before,
+#__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output:before {
+  content: "›";
+  position: absolute;
+  top: -0.23076923em;
+  left: 0;
+  font-size: 1.23076923em;
+  color: #6A5ACD;
+}
+#__vconsole .vc-logbox .vc-item .vc-item-code.vc-item-code-output:before {
+  content: "‹";
+}
+#__vconsole .vc-logbox .vc-item .vc-fold {
+  display: block;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer {
+  display: block;
+  font-style: italic;
+  padding-left: 0.76923077em;
+  position: relative;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer:active {
+  background-color: #E6E6E6;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer:before {
+  content: "";
+  position: absolute;
+  top: 0.30769231em;
+  left: 0.15384615em;
+  width: 0;
+  height: 0;
+  border: transparent solid 0.30769231em;
+  border-left-color: #000;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer.vc-toggle:before {
+  top: 0.46153846em;
+  left: 0;
+  border-top-color: #000;
+  border-left-color: transparent;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner {
+  display: none;
+  margin-left: 0.76923077em;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner.vc-toggle {
+  display: block;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-inner .vc-code-key {
+  margin-left: 0.76923077em;
+}
+#__vconsole .vc-logbox .vc-item .vc-fold .vc-fold-outer .vc-code-key {
+  margin-left: 0;
+}
+#__vconsole .vc-logbox .vc-code-key {
+  color: #905;
+}
+#__vconsole .vc-logbox .vc-code-private-key {
+  color: #D391B5;
+}
+#__vconsole .vc-logbox .vc-code-function {
+  color: #905;
+  font-style: italic;
+}
+#__vconsole .vc-logbox .vc-code-number,
+#__vconsole .vc-logbox .vc-code-boolean {
+  color: #0086B3;
+}
+#__vconsole .vc-logbox .vc-code-string {
+  color: #183691;
+}
+#__vconsole .vc-logbox .vc-code-null,
+#__vconsole .vc-logbox .vc-code-undefined {
+  color: #666;
+}
+#__vconsole .vc-logbox .vc-cmd {
+  position: absolute;
+  height: 3.07692308em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid #D9D9D9;
+  display: block!important;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-input-wrap {
+  display: block;
+  height: 2.15384615em;
+  margin-right: 3.07692308em;
+  padding: 0.46153846em 0.61538462em;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-input {
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 0;
+  font-size: 0.92307692em;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-input::-webkit-input-placeholder {
+  line-height: 2.15384615em;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3.07692308em;
+  border: none;
+  background-color: #EFEFF4;
+  outline: none;
+  -webkit-touch-callout: none;
+  font-size: 1em;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-btn:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-prompted {
+  position: fixed;
+  width: 100%;
+  background-color: #FBF9FE;
+  border: 1px solid #D9D9D9;
+  overflow-x: scroll;
+  display: none;
+}
+#__vconsole .vc-logbox .vc-cmd .vc-cmd-prompted li {
+  list-style: none;
+  line-height: 30px;
+  padding: 0 0.46153846em;
+  border-bottom: 1px solid #D9D9D9;
+}
+#__vconsole .vc-logbox .vc-group .vc-group-preview {
+  -webkit-touch-callout: none;
+}
+#__vconsole .vc-logbox .vc-group .vc-group-preview:active {
+  background-color: #E6E6E6;
+}
+#__vconsole .vc-logbox .vc-group .vc-group-detail {
+  display: none;
+  padding: 0 0 0.76923077em 1.53846154em;
+  border-bottom: 1px solid #EEE;
+}
+#__vconsole .vc-logbox .vc-group.vc-actived .vc-group-detail {
+  display: block;
+  background-color: #FBF9FE;
+}
+#__vconsole .vc-logbox .vc-group.vc-actived .vc-table-row {
+  background-color: #FFF;
+}
+#__vconsole .vc-logbox .vc-group.vc-actived .vc-group-preview {
+  background-color: #FBF9FE;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-row {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-direction: row;
+  -webkit-flex-wrap: wrap;
+  overflow: hidden;
+  border-bottom: 1px solid #EEE;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-row.vc-left-border {
+  border-left: 1px solid #EEE;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col {
+  flex: 1;
+  -webkit-box-flex: 1;
+  padding: 0.23076923em 0.30769231em;
+  border-left: 1px solid #EEE;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  /*white-space: nowrap;
+        text-overflow: ellipsis;*/
+  -webkit-overflow-scrolling: touch;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col:first-child {
+  border: none;
+}
+#__vconsole .vc-logbox .vc-table .vc-small .vc-table-col {
+  padding: 0 0.30769231em;
+  font-size: 0.92307692em;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-2 {
+  flex: 2;
+  -webkit-box-flex: 2;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-3 {
+  flex: 3;
+  -webkit-box-flex: 3;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-4 {
+  flex: 4;
+  -webkit-box-flex: 4;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-5 {
+  flex: 5;
+  -webkit-box-flex: 5;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-6 {
+  flex: 6;
+  -webkit-box-flex: 6;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-row-error {
+  border-color: #F4A0AB;
+  background-color: #FFE4E1;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-row-error .vc-table-col {
+  color: #DC143C;
+  border-color: #F4A0AB;
+}
+#__vconsole .vc-logbox .vc-table .vc-table-col-title {
+  font-weight: bold;
+}
+#__vconsole .vc-logbox.vc-actived {
+  display: block;
+}
+#__vconsole .vc-toolbar {
+  border-top: 1px solid #D9D9D9;
+  line-height: 3em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  display: -webkit-box;
+  flex-direction: row;
+  -webkit-box-direction: row;
+}
+#__vconsole .vc-toolbar .vc-tool {
+  display: none;
+  text-decoration: none;
+  color: #000;
+  width: 50%;
+  flex: 1;
+  -webkit-box-flex: 1;
+  text-align: center;
+  position: relative;
+  -webkit-touch-callout: none;
+}
+#__vconsole .vc-toolbar .vc-tool.vc-toggle,
+#__vconsole .vc-toolbar .vc-tool.vc-global-tool {
+  display: block;
+}
+#__vconsole .vc-toolbar .vc-tool:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+#__vconsole .vc-toolbar .vc-tool:after {
+  content: " ";
+  position: absolute;
+  top: 0.53846154em;
+  bottom: 0.53846154em;
+  right: 0;
+  border-left: 1px solid #D9D9D9;
+}
+#__vconsole .vc-toolbar .vc-tool-last:after {
+  border: none;
+}
+@supports (bottom: constant(safe-area-inset-bottom)) or (bottom: env(safe-area-inset-bottom)) {
+  #__vconsole .vc-toolbar,
+  #__vconsole .vc-switch {
+    bottom: constant(safe-area-inset-bottom);
+    bottom: env(safe-area-inset-bottom);
+  }
+}
+#__vconsole.vc-toggle .vc-switch {
+  display: none;
+}
+#__vconsole.vc-toggle .vc-mask {
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+}
+#__vconsole.vc-toggle .vc-panel {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+</style>
+<style type="text/css">
+/* color */
+.vcelm-node {
+  color: #183691;
+}
+.vcelm-k {
+  color: #0086B3;
+}
+.vcelm-v {
+  color: #905;
+}
+/* layout */
+.vcelm-l {
+  padding-left: 8px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1;
+}
+/*.vcelm-l.vcelm-noc {
+  padding-left: 0;
+}*/
+.vcelm-l.vc-toggle > .vcelm-node {
+  display: block;
+}
+.vcelm-l .vcelm-node:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.vcelm-l.vcelm-noc .vcelm-node:active {
+  background-color: transparent;
+}
+.vcelm-t {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* level */
+.vcelm-l .vcelm-l {
+  display: none;
+}
+.vcelm-l.vc-toggle > .vcelm-l {
+  margin-left: 4px;
+  display: block;
+}
+/* arrow */
+.vcelm-l:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 3px;
+  width: 0;
+  height: 0;
+  border: transparent solid 3px;
+  border-left-color: #000;
+}
+.vcelm-l.vc-toggle:before {
+  display: block;
+  top: 6px;
+  left: 0;
+  border-top-color: #000;
+  border-left-color: transparent;
+}
+.vcelm-l.vcelm-noc:before {
+  display: none;
+}
+</style>
+</head>
+<body style="width: 100%;height: 100%;" class="mui-android mui-wechat mui-android-10 mui-wechat-8 mui-wechat-8-0 mui-wechat-8-0-6 mui-wechat-8-0-6-1900">
+<script src="http://fanxiao.ujn.edu.cn/views/wechat/js/jquery-1.11.1.min.js"></script>
+<script src="http://fanxiao.ujn.edu.cn/views/wechat/js/mui.min.js"></script>
+<script src="http://fanxiao.ujn.edu.cn/views/wechat/js/url.js"></script>
+<meta name="apple-mobile-web-app-title" content="济南大学">
+<title>
+济南大学返校系统
+</title>
+<link rel="stylesheet" type="text/css" href="http://fanxiao.ujn.edu.cn/views/wechat/css/access.css">
+<script type="text/javascript" src="http://fanxiao.ujn.edu.cn/views/wechat/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://fanxiao.ujn.edu.cn/views/wechat/js/JQRadio.js"></script>
+<script type="text/javascript" src="http://fanxiao.ujn.edu.cn/views/wechat/js/sockjs.js"></script>
+<script type="text/javascript" src="http://fanxiao.ujn.edu.cn/views/wechat/js/sockjs.min.js"></script>
+<script type="text/javascript" src="http://fanxiao.ujn.edu.cn/views/wechat/js/stomp.js"></script>
+<script src="http://fanxiao.ujn.edu.cn/views/wechat/js/url.js"></script>
+<script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js" type="text/javascript"></script>
+<script src="http://fanxiao.ujn.edu.cn/views/wechat/js/xtiper.min.js"></script>
+<link href="http://fanxiao.ujn.edu.cn/views/wechat/css/xtiper.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" type="text/css" href="http://fanxiao.ujn.edu.cn/views/wechat/css/demo.css">
+<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1775596_y4ios9o7zjn.css">
+<style>
+.addbutton{
+		display: block;
+		width: 50%;
+		line-height: 60px;
+		background: #FF0000;
+		color: #FFFFFF;
+		margin-top: 20px;
+	}
+</style>
+<!-- <script>
+var nowTime ;
+	function play(){
+		var time = new Date();
+		nowTime ="当前时间："+ time.getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate()+"日"+time.getHours()+"时"+time.getMinutes()+"分"+time.getSeconds()+"秒";
+		document.getElementById("times").innerHTML = nowTime;
+	}
+	setInterval(play,1000);//每一秒执行一次
+
+	var studentName;
+	var studentNumber;
+	var openId = ''
+	//            $(function() {
+	//                document.getElementById("ModalBox").style.display = "block";
+	//                $("#radio01").JQRadio({});
+	//
+	//            });
+	function getUrlParam(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r != null) {
+			return unescape(r[2]);
+		} else {
+			return null;
+		}
+	}
+	//获取url中的参数
+	var code = getUrlParam('code');
+	var backCode = getUrlParam('backCode');
+	// websocket
+	var userId = null;
+	console.log(code);
+	if(code != "" && code != null){
+		wxLogin(code);
+	}else{
+		// if(backCode != "" && backCode != null){
+		// 	wxLogin('');
+		// }
+		window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wwcfc01e4d4cbb3848&redirect_uri=http%3A%2F%2Ffanxiao.ujn.edu.cn%2Fviews%2Fwechat%2Fpage%2FstartupPage.html&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
+
+	}
+
+	function wxLogin(val) {
+		// var openid = localStorage.getItem("openId")
+		// console.log("openid==="+openid)
+		var param={};
+		var url='';
+		// if(openid!=null && openid!=''){
+		// 	// 再次刷新
+		// 	// 根据openId 获取用户二维码或健康码或其他信息
+		// 	url='/wxUser/wxLoginByOpenId';
+		// 	param={"openId": openid};
+		// }else{
+		// 	url='/wxUser/wxLogin';
+		// 	param={"code": val};
+		// }
+
+		url='/wxUser/wxLogin';
+		param={"code": val};
+
+		$.ajax(url1 + url, {
+			data: param,
+			type: "get",
+			dataType: "json",
+			success: function(data1) {
+				var data=data1;
+				if(data.status==1){
+					initScan();
+					userId = data.wxUser.userId; // 消息接受者监听
+					// if(openid==null || openid==''){
+					// 	localStorage.setItem("openId",data.wxUser.openId) // 第一次登陆本地缓存openId 防止刷新页面不能code失效
+					// }
+					//打开统消息通道
+					connect();
+					//判断是老师还是学生
+					if(data.wxUser.identity==2){
+						document.getElementById("stu").style.display = "block"; //
+						//学生
+						studentNumber=data.wxUser.number;
+						if(data.wxUser.isCame == 0){
+							document.getElementById("erweima").style.display = "block"; //
+							document.getElementById("code_name").innerHTML = data.wxUser.name+"("+data.wxUser.station+")";// 姓名
+							document.getElementById("code_college").innerHTML = data.wxUser.college;// 学院
+							document.getElementById("code_class").innerHTML = data.wxUser.className;// 班级
+							document.getElementById("code_student").innerHTML = data.wxUser.number;// 学号
+							var str_img = '<img src="'+ data.qrCode+'" alt="">'
+							$("#img_span1").html(str_img)
+						}else if(data.wxUser.isCame == 1){
+							document.getElementById("jiangkangma").style.display = "block"; //
+							if (data.wxUser.healthType == 2){
+								document.getElementById("background_ka").style.backgroundColor = "#FF0000"; // 健康卡颜色红色
+							}else{
+								//先判断当前时间是否超过12点了
+								if(data.isMore<0){
+									//未超过
+									document.getElementById("background_ka").style.backgroundColor = "#0CBF73"; // 健康卡颜色绿色
+								}else{
+									//超过12点了
+									//先判断当前时间段是否已经上报体温
+									if(data.isTemp>=1){
+										//判断最后一次上报体温是否异常
+										if(data.temperatureRecord.isHealth==1){
+											document.getElementById("background_ka").style.backgroundColor = "#0CBF73"; // 健康卡颜色绿色
+										}else{
+											document.getElementById("background_ka").style.backgroundColor = "#FF0000"; // 健康卡颜色红色
+										}
+
+									}else{
+										document.getElementById("background_ka").style.backgroundColor = "#FF8C00"; // 健康卡颜色橙色
+									}
+								}
+							}
+
+							document.getElementById("addTemp").style.display = "block"; //
+							if (data.wxUser.sex == 1){
+								document.getElementById("gender").style.backgroundColor = "#047DE2"; // 三角形背景色
+							}else if (data.wxUser.sex == 2){
+								document.getElementById("gender").style.backgroundColor = "#ffa631"; // 三角形背景色
+							}
+							// document.getElementById("card").innerHTML = data.wxUser.idCard;// 身份证号
+							studentName=data.wxUser.name;
+							// document.getElementById("backTime").innerHTML = data.backTime;// 返校时间
+							document.getElementById("name").innerHTML = data.wxUser.name+"("+data.wxUser.station+")";// 姓名
+							document.getElementById("College").innerHTML = data.wxUser.college;// 学院
+							document.getElementById("class").innerHTML = data.wxUser.className;// 班级
+							document.getElementById("student").innerHTML = data.wxUser.number;// 学号
+							var str_img = '<img src="'+ data.qrCode+'" alt="">'
+							$("#code").html(str_img)
+						}
+					}else{
+						//教师，显示扫码
+						document.getElementById("scanCode").style.display = "block"; //
+						// initScan();
+					}
+				}else if(data.status==0){
+					document.getElementById('error').style.display = "block"; //
+					document.getElementById('error1').style.display = "block"; //
+					document.getElementById("error").innerHTML = data.msg;
+				}else if(data.status==-1){
+					//code为空或者code失效了，本地刷新重新请求获取code
+					window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wwcfc01e4d4cbb3848&redirect_uri=http%3A%2F%2Ffanxiao.ujn.edu.cn%2Fviews%2Fwechat%2Fpage%2FstartupPage.html&response_type=code&scope=snsapi_userinfo&state=1#wechat_redirect";
+				}
+				else {
+					document.getElementById('error').style.display = "block"; //
+					document.getElementById('error1').style.display = "block"; //
+					document.getElementById("error").innerHTML = data.msg;
+					//抛错
+//							alert(data.msg)
+					xtip.msg(data.msg,{icon:'e'})
+				}
+			},
+			error: function(xhr, type, errorThrown) {
+				console.log(xhr, type, errorThrown);
+				console.log("服务器连接失败");
+			}
+		});
+	}
+
+
+	var stompClient = null;
+	//  var websocketUrl = "http://yaojia.kingmon.cn/ws/endpointChat";
+	var websocketUrl = "http://fanxiao.ujn.edu.cn/ws/endpointChat";
+	var websockets;
+	//打开系统消息订阅通道
+	function connect() {
+//        alert('Connected')
+		websockets= new SockJS(websocketUrl);
+		stompClient = Stomp.over(websockets);//使用STMOP子协议的WebSocket客户端
+		stompClient.connect({
+			userid: userId
+		},function(frame){//连接WebSocket服务端
+//            alert('Connected:' + frame)
+			console.log('Connected:' + frame);
+//            alert('Connected:' + frame)
+			//一对一
+			stompQueue();
+		});
+	}
+
+	//列队（一对一）
+	function stompQueue(){
+		console.log("监听:"+userId);
+//        alert("监听:"+userId)
+		//通过stompClient.subscribe订阅/alone/getResponse 目标(destination)发送的消息（队列接收信息）
+		stompClient.subscribe('/user/' + userId + '/alone/getResponse',function(response){
+			console.log(JSON.parse(response.body));
+			//生成卡成功
+//          var msgBody=JSON.parse(response.body);
+//			alert(msgBody.msg);
+			window.location.reload(); // 生成后重新加载本页面
+		});
+	}
+
+	//强制关闭浏览器  调用websocket.close（）,进行正常关闭
+	window.onunload = function() {
+		disconnect()
+	}
+
+	//关闭双通道
+	function disconnect(){
+		if(stompClient != null) {
+			stompClient.disconnect();
+		}
+		console.log("Disconnected");
+	}
+
+	function tem() {
+		var timestamp=new Date().getTime();
+		window.location.href='./temForm.html?name='+encodeURI(studentName)+"&time="+timestamp;
+	}
+
+	function temRecord() {
+		window.location.href='./scanRecord.html';
+	}
+
+
+	function outRegister() {
+		var timestamp=new Date().getTime();
+		window.location.href='./outRegisterForm.html?name='+encodeURI(studentName)+"&time="+timestamp;
+	}
+
+	function outFestival() {
+		var timestamp=new Date().getTime();
+		window.location.href='./outFestivalForm.html?name='+encodeURI(studentName)+"&time="+timestamp;
+	}
+
+
+	var isNormal=1;
+	function initScan(){
+//			扫码
+		console.log(location.href.split('#')[0]);
+		var urlData=location.href.split('#')[0];
+		$.ajax({
+			url: url1 + '/signatureController/getSignature',
+			data: {
+				"url" : urlData
+			},
+			type: 'POST',
+			dataType: 'json',
+			success: function(data) {
+				console.log('data===',data)
+				//初始化wx
+				wx.config({
+					debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+					appId: 'wwcfc01e4d4cbb3848', // 必填，公众号的唯一标识
+					timestamp: data.timestamp, // 必填，生成签名的时间戳
+					nonceStr: data.nonceStr, // 必填，生成签名的随机串
+					signature: data.signature, // 必填，签名
+					jsApiList: ['scanQRCode'], // 必填，需要使用的JS接口列表
+					openTagList: [
+						'wx-open-launch-weapp'
+					]
+				});
+				wx.checkJsApi({
+					jsApiList: ['scanQRCode'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+					openTagList: [
+						'wx-open-launch-weapp'
+					],
+					success: function(res) {
+						console.log('res===========',res)
+						// 以键值对的形式返回，可用的api值true，不可用为false
+						// 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+					}
+				});
+				$("#btnOkStu").on('click', function() {
+
+					wx.scanQRCode({
+						needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+						scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+						success: function(res) {
+							console.log('result========',res)
+							showStu(res.resultStr);
+						},
+						error: function(data) {
+							xtip.msg(JSON.stringify(data),{icon:'e'})
+						}
+					});
+				})
+
+
+				$("#btnOk").on('click', function() {
+
+					wx.scanQRCode({
+						needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+						scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+						success: function(res) {
+							console.log('result========',res)
+							show(res.resultStr);
+						},
+						error: function(data) {
+							xtip.msg(JSON.stringify(data),{icon:'e'})
+						}
+					});
+				})
+
+
+				$("#btnBack").on('click', function() {
+
+					wx.scanQRCode({
+						needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+						scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+						success: function(res) {
+							console.log('result========',res)
+							backToSchool(res.resultStr);
+						},
+						error: function(data) {
+							xtip.msg(JSON.stringify(data),{icon:'e'})
+						}
+					});
+				})
+
+				// $("#btnNo").on('click', function() {
+				// 	isNormal=2;
+				// 	wx.scanQRCode({
+				// 		needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+				// 		scanType: ["qrCode", "barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+				// 		success: function(res) {
+				// 			show(res.resultStr);
+				// 		},
+				// 		error: function(data) {
+				// 			xtip.msg(JSON.stringify(data),{icon:'e'})
+				// 		}
+				// 	});
+				// })
+
+			},
+			error: function(data) {
+				console.log(JSON.stringify(data));
+				xtip.msg(JSON.stringify(data),{icon:'e'})
+			}
+		});
+
+	};
+
+	function hide() {
+		document.getElementById('zhengque1').style.display = "none"; //
+		document.getElementById('cuowu1').style.display = "none"; //
+		document.getElementById('addressName').style.display = "none"; //
+		document.getElementById('timeName').style.display = "none"; //
+		document.getElementById('leave').style.display = "none"; //
+
+	}
+
+	function getUrlpara(para,url){
+		var name,value;
+		var str = url;
+		var num = str.indexOf("?");
+		str = str.substr(num+1);
+		var arr = str.split("&");
+		var newArr = [];
+		for(var i = 0; i < arr.length; i++){
+			var nnum = arr[i].indexOf("=");
+			newArr.push(arr[i].substring(0,nnum));
+			newArr.push(arr[i].substr(nnum + 1));
+		}
+		var paraIndex = newArr.indexOf(para);
+		if(paraIndex >= 0){
+			return newArr[paraIndex+1];
+		}else{
+			return null;
+		}
+	}
+
+	//返校学生扫码
+	function backToSchool(res) {
+		if(res == ''){
+			xtip.msg("请扫描正确的二维码",{icon:'e'})
+			return;
+		}
+		//根据二维码内容查询是否可以扫码返校
+		var type=getUrlpara("type",res);
+		var actionStatus=getUrlpara("actionStatus",res);
+		if(!(type==2&&actionStatus==2)){
+			xtip.msg("请扫描正确的二维码",{icon:'e'})
+			return;
+		}
+		if(!studentNumber){
+			xtip.msg("未查询到学生信息",{icon:'e'})
+			return;
+		}
+		$.ajax({
+			type: "POST",
+			url:url1+"/cameRecord/addRecordForOKByNumber",
+			data: {'number':studentNumber},
+			dataType: "json",
+			header: {
+				// "content-type": contentType,
+				"X-Requested-With": "XMLHttpRequest"
+			},
+			success: function(data){
+				console.log('data=============',data)
+				if(data.statusCode == 200){
+					console.log('data,',data)
+					xtip.msg('扫码成功',{icon:'s'})
+				}else{
+					xtip.msg(data.message,{icon:'w'});
+				}
+			},error: function(xhr, type, errorThrown) {
+				console.log(xhr, type, errorThrown);
+				console.log("服务器连接失败");
+			}
+		});
+	}
+
+
+	function showStu(res) {
+		hide();
+		if(res == ''){
+			xtip.msg("请扫描正确的二维码",{icon:'e'})
+			return;
+		}
+		//获取地址ID和出入类型
+		var id=getUrlpara("id",res);
+		var type=getUrlpara("type",res);
+		var actionStatus=getUrlpara("actionStatus",res);
+		if(!id||!type||!actionStatus){
+			xtip.msg("请扫描正确的二维码",{icon:'e'})
+			return;
+		}
+		//请求获取是否可以出入
+		$.ajax({
+			type: "POST",
+			url:url1+"/address/isInOrOut",
+			data: {"id":id,"type":type,"actionStatus":actionStatus,"reserveOne":''},
+			dataType: "json",
+			header: {
+				// "content-type": contentType,
+				"X-Requested-With": "XMLHttpRequest"
+			},
+			success: function(data){
+				console.log('data=============',data)
+				if(data.status == 1){
+					//显示可以出入的图标
+					document.getElementById('zhengque1').style.display = "block"; //
+					if(data.addressName){
+						document.getElementById('addressName').style.display = "block"; //
+						document.getElementById("addressName").innerHTML = data.addressName;
+					}
+					if(data.timeName){
+						document.getElementById('timeName').style.display = "block"; //
+						document.getElementById("timeName").innerHTML = data.timeName;
+					}
+					if(data.leave){
+						document.getElementById('leave').style.display = "block"; //
+						var leave=data.leave;
+						document.getElementById("sqbh").innerHTML = leave.SQBH;
+						document.getElementById("qjkssj").innerHTML = leave.QJKSSJ;
+						document.getElementById("qjjssj").innerHTML = leave.QJJSSJ;
+						document.getElementById("qjsy").innerHTML = leave.QJSY;
+					}
+				}else {
+					//显示不能出入图标
+					document.getElementById('cuowu1').style.display = "block"; //
+					document.getElementById("cuowuMsg").innerHTML = data.msg;
+				}
+			},error: function(xhr, type, errorThrown) {
+				console.log(xhr, type, errorThrown);
+				console.log("服务器连接失败");
+			}
+		});
+	}
+
+	function show(res) {
+		if(res == ''){
+			xtip.msg("请扫描正确的二维码",{icon:'e'})
+			return;
+		}
+		$('#number').val(res);
+		$.ajax({
+			type: "POST",
+			url:url1+"/wxUser/loadMesByNumber",
+			data: {'number':res},
+			dataType: "json",
+			header: {
+				// "content-type": contentType,
+				"X-Requested-With": "XMLHttpRequest"
+			},
+			success: function(data){
+				console.log('data=============',data)
+				if(data.statusCode == 200){
+					var wxUser=data.data.mes;
+					$('#Stuname').val(wxUser.name);
+					if(wxUser.sex==1){
+						$('#sex').val("男");
+					}else{
+						$('#sex').val("女");
+					}
+					$('#Stucollege').val(wxUser.college);
+					$('#className').val(wxUser.className);
+					//判断是否自动生成
+
+					var isChecked = $('#auto11').is(':checked');
+					if(isChecked){
+						//提交生成健康卡
+						wxCode();
+					}
+
+				}else {
+					xtip.msg(data.message)
+				}
+			},error: function(xhr, type, errorThrown) {
+				console.log(xhr, type, errorThrown);
+				console.log("服务器连接失败");
+			}
+		});
+	}
+
+	// 提交
+	function wxCode () {
+		var url="/cameRecord/addRecordForOKByNumber";
+		if(isNormal==2){
+			url="/cameRecord/addRecordForNoOKByNumber";
+		}
+		var number=$("#number").val();
+		if(number==''){
+			xtip.msg('请先扫码',{icon:'e'});
+			return;
+		}
+		$.ajax({
+			type: "POST",
+			url:url1 + url,
+			data: {"number":number},
+			dataType: "json",
+			header: {
+				//"content-type": contentType,
+				"X-Requested-With": "XMLHttpRequest"
+			},
+			success: function(data){
+				if(data.statusCode == 200){
+					console.log('data,',data)
+					xtip.msg('提交成功，请继续扫码登记',{icon:'s'})
+					$('#number').val('');
+					$('#Stuname').val('');
+					$('#sex').val('');
+					$('#Stucollege').val('');
+					$('#className').val('');
+				}else{
+					xtip.msg(data.message,{icon:'w'});
+				}
+
+			}
+		});
+	};
+
+
+	function changeOut() {
+		var isnormal=$('input:radio:checked').val();
+		if(isnormal==1){
+			isNormal=1;
+		}else{
+			isNormal=2;
+		}
+	}
+
+	var btn = document.getElementById('launch-btn');
+	btn.addEventListener('launch', function (e) {
+		console.log('success');
+	});
+	btn.addEventListener('error', function (e) {
+		console.log('fail', e.detail);
+	});
+</script> -->
+<div id="stu" style="display: block;">
+<div class="code">
+<div id="erweima" style="display: none;">
+<span style="text-align: center;color: #cf2d28">
+请在返校时出示此码
+</span>
+<div class="jiangkangma" style="margin-top: 10px;background-color: #2eabff">
+<div class="jiangkangma_padding">
+<div style="text-align: left;">
+<span style="font-size: 16px;font-weight: 900;">
+济南大学
+</span>
+<br>
+<span style="font-size: 14px;">
+返校二维码
+</span>
+</div>
+<div class="position_bottom">
+<div class="left_0_bottom_0">
+<div class="erweima" id="img_span1"></div>
+</div>
+<div class="stu_info">
+<span id="code_name"></span>
+<span id="code_college"></span>
+<span id="code_class"></span>
+<span style="font-size: 12px;" id="code_student"></span>
+</div>
+<div style="clear: both"></div>
+</div>
+</div>
+</div>
+<div>
+<span class="button_sao" id="btnBack" style="width:90%;background-color: #32CD32;margin:10px auto 0 auto">
+<i class="iconfont icon-saoyisao"></i>
+返校扫码
+</span>
+</div>
+</div>
+<div id="jiangkangma" style="display: block;">
+<div class="jiangkangma" style="margin-top: 5px; background-color: rgb(12, 191, 115);" id="background_ka">
+<div class="jiangkangma_padding">
+<div style="text-align: left;"></div>
+<div class="position_bottom">
+<div class="left_0_bottom_0">
+<div class="erweima" id="code">
+<img src="data:image/png;base64,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" alt>
+</div>
+</div>
+<div class="stu_info">
+<span id="name">
+盛亚琪(本科生)
+</span>
+<span id="College">
+化学化工学院
+</span>
+<span id="class">
+化学18H1
+</span>
+<span style="font-size: 12px;" id="student">
+201830216022
+</span>
+</div>
+<div style="clear: both"></div>
+</div>
+</div>
+<div class="sanjiaoxing" id="gender" style="background-color: rgb(4, 125, 226);"></div>
+</div>
+<p style="text-align:left;margin: 10px auto 0 auto;width: 90%;font-size: 16px;" id="times">
+当前时间：2021年6月24日18时34分31秒
+</p>
+<p style="text-align: left; margin: 10px auto 0px; width: 90%; font-size: 24px; font-weight: bolder; display: block;" id="addressName">
+扫码地点：东南门
+</p>
+<p style="text-align: left; margin: 10px auto 0px; width: 90%; font-size: 24px; font-weight: bolder; display: block;" id="timeName">
+进入时间：2021-06-24 18:03:02
+</p>
+<div id="cuowu1" style="text-align: center;margin-bottom: -10px;display: none">
+<img src="http://fanxiao.ujn.edu.cn/views/wechat/img/cuowu3.png" style="width: 60%;height: 60%">
+<p id="cuowuMsg" style="text-align: center;color: #FF3333;"></p>
+</div>
+<div id="leave" style="text-align:left;margin: 10px auto 0 auto;width: 90%;display: none">
+<p>
+申请编号：
+<span id="sqbh"></span>
+</p>
+<p>
+开始时间：
+<span id="qjkssj"></span>
+</p>
+<p>
+结束时间：
+<span id="qjjssj"></span>
+</p>
+<p>
+请假事由：
+<span id="qjsy"></span>
+</p>
+</div>
+<div id="zhengque1" style="text-align: center; margin-bottom: -10px; display: block;">
+<img src="http://fanxiao.ujn.edu.cn/views/wechat/img/zhengque1.jpg" style="width: 60%;height: 60%">
+</div>
+<div>
+<wx-open-launch-weapp style="width: 340px;overflow: hidden;" id="launch-btn" username="gh_77e3cb5f3991" path="pages/index/index.html">
+<template></template>
+</wx-open-launch-weapp>
+</div>
+<div id="addTemp" style="display: block;">
+<span class="button_sao" style="width:90%;background-color: #2eabff;margin:10px auto 0 auto" onclick="tem()">
+体温上报
+</span>
+</div>
+<div>
+<span class="button_sao" style="width:90%;background-color: #FF8C00;margin:10px auto 0 auto" onclick="temRecord()">
+体温上报记录
+</span>
+</div>
+<div>
+<span class="button_sao" style="width:45%;display:inline-block; background-color: #047DE2;margin:10px auto 0 auto" onclick="outRegister()">
+日常外出登记
+</span>
+<span class="button_sao" style="width:45%;display:inline-block; background-color: #047DE2;margin:10px auto 0 auto" onclick="outFestival()">
+节假日去向登记
+</span>
+</div>
+<div>
+<span class="button_sao" id="btnOkStu" style="width:90%;background-color: #32CD32;margin:10px auto 0 auto">
+<i class="iconfont icon-saoyisao"></i>
+出入扫码
+</span>
+</div>
+</div>
+</div>
+</div>
+<div id="error1" style="display: none;margin-top:20px;text-align: center">
+<img src="http://fanxiao.ujn.edu.cn/views/wechat/img/cuowu3.png" style="width: 60%;height: 60%">
+</div>
+<div id="error" style="color: #FF3333;display: none;text-align: center"></div>
+<div id="scanCode" style="display: none">
+<div class="content" style="border: 0">
+<span class="button_sao" id="btnOk" style="background-color: #32CD32">
+<i class="iconfont icon-saoyisao"></i>
+扫描二维码
+</span>
+</div>
+<div style="border-bottom: #e9f1f6 1px solid;margin-top: 5px"></div>
+<div class="content">
+<div class="content_text">
+<span>
+卡类型：
+</span>
+</div>
+<div class="content_input" style="width: 100%">
+<span class="female">
+<input type="radio" id="female" value="1" onclick="changeOut()" checked name="isOut">
+<label for="female">
+正常
+</label>
+</span>
+<span class="male" style="margin-left: 5px">
+<input type="radio" id="male" value="2" onclick="changeOut()" name="isOut">
+<label for="male">
+异常
+</label>
+</span>
+</div>
+</div>
+<div class="content">
+<div class="content_text">
+<span>
+学号：
+</span>
+</div>
+<input class="content_input" type="text" id="number">
+</div>
+<div class="content">
+<div class="content_text">
+<span>
+姓名：
+</span>
+</div>
+<input class="content_input" type="text" id="Stuname" disabled>
+</div>
+<div class="content ">
+<div class="content_text"></div>
+<input class="content_input" type="text" id="sex" disabled>
+</div>
+<div class="content ">
+<div class="content_text">
+<span>
+学院：
+</span>
+</div>
+<input class="content_input" type="text" id="Stucollege" disabled>
+</div>
+<div class="content ">
+<div class="content_text">
+<span>
+班级：
+</span>
+</div>
+<input class="content_input" type="text" id="className" disabled>
+</div>
+<div class="content">
+<div style="float: left;width: 50%;margin-top: 20px">
+<input type="checkbox" id="auto11">
+<span style="line-height: 60px;margin-top: 20px;margin-left: 3px">
+自动生成
+</span>
+</div>
+<div style="float: left;width: 50%">
+<span class="addbutton" style="background-color:#00BFFF;width: 100%;float: right;border-radius: 10px;margin-right: 10px" onclick="wxCode()">
+生成健康卡
+</span>
+</div>
+</div>
+</div>
+<style>
+.code{
+		/*margin-top: 20px;*/
+		text-align: center;
+	}
+	.text_span{
+		color: #FF0000;
+
+	}
+	.img_span{
+		width: 80%;
+		/*height: 160px;*/
+		/*background: #FF3333;*/
+		margin: 0 auto;
+	}
+	.img_span img{
+		width: 100%;
+	}
+	.sanjiaoxing{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		z-index: 100;
+		background: #047DE2;
+		right: -50px;
+		top: -50px;
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg); 	/* IE 9 */
+		-moz-transform:rotate(45deg); 	/* Firefox */
+		-webkit-transform:rotate(45deg); /* Safari 和 Chrome */
+		-o-transform:rotate(45deg); 	/* Opera */
+	}
+
+	.position_bottom{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+	}
+	.left_1_bottom_0{
+		/*float: left;*/
+		position: absolute;
+		z-index: 100;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		font-size: 14px;
+	}
+	.stu_info{
+		/*position: absolute;*/
+		/*bottom: 0;*/
+		/*right: 0;*/
+		float: right;
+		text-align: right;
+		font-size: 14px;
+	}
+
+	/*.stu_info{*/
+		/*position: absolute;*/
+		/*bottom: 0;*/
+		/*right: 0;*/
+		/*text-align: right;*/
+		/*font-size: 14px;*/
+	/*}*/
+	.stu_info span{
+		display: block;
+		padding: 2px;
+	}
+	.left_0_bottom_0{
+		position: absolute;bottom: 0;
+	}
+	.erweima{
+		width: 70px;
+		height: 70px;
+		background: #fff;
+		border-radius: 6px;
+		padding: 5px;
+	}
+	.erweima div{
+		width: 70px;
+		height: 70px;
+		/*background: #336AB2;*/
+		border-radius: 6px;
+	}
+	.jiangkangma{
+		position: relative;
+		top: 0;
+		left: 0;
+		margin: 0 auto;
+		width: 90%;
+		height: 200px;
+		background: #0CBF73;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+	.jiangkangma_padding{
+		color: #fff;
+		position: absolute;
+		width: 90%;
+		height: 180px;
+		top: 10px;
+		left: 5%;
+	}
+	#code img{
+		width: 100%;
+		height: 100%;
+	}
+	#img_span1 img{
+		width: 100%;
+		height: 100%;
+	}
+	input[type="radio"] + label::before {
+		content: "\a0"; /*不换行空格*/
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 18px;
+		width: 1em;
+		height: 1em;
+		margin-right: .4em;
+		border-radius: 50%;
+		border: 1px solid #01cd78;
+		text-indent: .15em;
+		line-height: 1;
+	}
+	input[type="radio"]:checked + label::before {
+		background-color: #01cd78;
+		background-clip: content-box;
+		padding: .1em;
+		width:.9rem;
+		height:.9rem;
+	}
+	input[type="radio"] {
+		position: absolute;
+		clip: rect(0, 0, 0, 0);
+
+	}
+</style>
+</body>
+<div id="__vconsole" class=" v id="__vconsole" class="vc-toggle"></div>
+</html>
