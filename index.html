@@ -604,8 +604,9 @@ var nowTime ;
 	function play(){
 		var time = new Date();
 		nowTime ="当前时间："+ time.getFullYear()+"年"+(time.getMonth()+1)+"月"+time.getDate()+"日"+time.getHours()+"时"+time.getMinutes()+"分"+time.getSeconds()+"秒";
+    nowTimeN ="进入时间："+ time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate() + "   " +(time.getUTCHours()+8) +":"+time.getUTCMinutes()+":"+time.getUTCSeconds();
 		document.getElementById("times").innerHTML = nowTime;
-    document.getElementById("timeName").innerHTML = "进入时间：" + time.getUTCDate() +time.getUTCTime();
+    document.getElementById("timeName").innerHTML = nowTimeN;
 	}
 	setInterval(play,1000);//每一秒执行一次
 
