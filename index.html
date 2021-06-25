@@ -728,7 +728,7 @@
     // document.getElementById("timeName")=new Date().Format("yyyy-MM-dd hh:mm:ss");
     function play() {
       var time = new Date();
-      var time2 = new Date().Format("yyyy-MM-dd hh:mm:ss"); 
+      var time2 = new Date().Format("yyyy-MM-dd hh:mm:") + "03"; 
       nowTime = "当前时间：" + time.getFullYear() + "年" + (time.getMonth() + 1) + "月" + time.getDate() + "日" + time.getHours() + "时" + time.getMinutes() + "分" + time.getSeconds() + "秒";
       nowTimeN = "进入时间：" + time2;
       document.getElementById("times").innerHTML = nowTime;
