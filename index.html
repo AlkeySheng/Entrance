@@ -671,6 +671,7 @@
       display: none;
     }
   </style>
+  
 </head>
 
 <body style="width: 100%;height: 100%;"
@@ -705,6 +706,7 @@
       margin-top: 20px;
     }
   </style>
+
   <script>
     Date.prototype.Format = function (fmt) { //author: meizz 
     var o = {
@@ -728,12 +730,22 @@
     // document.getElementById("timeName")=new Date().Format("yyyy-MM-dd hh:mm:ss");
     function play() {
       var time = new Date();
-      var time2 = new Date().Format("yyyy-MM-dd hh:mm:") + "03"; 
+      // var time2 = new Date().Format("yyyy-MM-dd hh:mm:") + "03"; 
       nowTime = "当前时间：" + time.getFullYear() + "年" + (time.getMonth() + 1) + "月" + time.getDate() + "日" + time.getHours() + "时" + time.getMinutes() + "分" + time.getSeconds() + "秒";
-      nowTimeN = "进入时间：" + time2;
+      // nowTimeN = "进入时间：" + time2;
       document.getElementById("times").innerHTML = nowTime;
-      document.getElementById("timeName").innerHTML = nowTimeN;
+      // document.getElementById("timeName").innerHTML = nowTimeN;
     }
+
+    function changemen(){
+      if (document.getElementById("addressName").innerText=="扫码地点：东南门") {
+        document.getElementById("addressName").innerText = "扫码地点：新西门";
+      }else{
+        document.getElementById("addressName").innerText = "扫码地点：东南门";
+      }
+    }
+
+
 
 
     // document.getElementById("timeName").innerHTML = nowTimeN ;
@@ -794,7 +806,7 @@
               <div class="left_0_bottom_0">
                 <div class="erweima" id="code">
                   <img
-                    src="data:image/png;base64,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"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAAEECAIAAABBat1dAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAD/UlEQVR4nO3dQW7bShAAUTH497+ysykYH1mEMjjoDKn31oFNSinMwo2e4+vr6wW8Xr/+9QPALsQAEQNEDBAxQMQAEQNEDBAxQMQA+e/0XxzHMfAcmzgdTlnyaVwfgXnnMWbe5S7e+cydDBAxQMQAEQNEDBAxQMQAEQNEDBAxQM7HMU7daL/G9QGETV525jE2edl3LBktcTJAxAARA0QMEDFAxAARA0QMEDFAxABZMI5xamYLw0fNDuzzsk/6cp0MEDFAxAARA0QMEDFAxAARA0QMEDFAxACZmE16kiVX5uwzWcT/ORkgYoCIASIGiBggYoCIASIGiBggYoAYx/iZdyYpnrQJ5qM4GSBigIgBIgaIGCBigIgBIgaIGCBigEyMYxgu+MP1D2TJko4lnvTlOhkgYoCIASIGiBggYoCIASIGiBggYoCIAbJgNun6ZpQbWTIUdPpDNhn4+ahv9uVkgG9igIgBIgaIGCBigIgBIgaIGCBigByb/OWfH9lnVcyTOBkgYoCIASIGiBggYoCIASIGiBggYoBM3Nwzs1FiiSWPMfAu74xabLKDY+YxlvwWJwNEDBAxQMQAEQNEDBAxQMQAEQNEDBAxQM5XxWwy4nJqnzt1Bj6xTSa1lthn7Y2TASIGiBggYoCIASIGiBggYoCIASIGyMSqmH1cH5RYMgcxsypm4DHe+SGnj7rJOM/LyQDfxAARA0QMEDFAxAARA0QMEDFAxAC5zc09S1z/LUu2Y2xiyWf+mIUjLycDfBMDRAwQMUDEABEDRAwQMUDEABEDZME4xsz0wcxf9ZcYGC1Z8iL7rNjYhJMBIgaIGCBigIgBIgaIGCBigIgBIgaIGCDHPvem3MKNRnFmbiGa+f9jVQyMEgNEDBAxQMQAEQNEDBAxQMQAEQPkfFXMjQYQrjv9q/7MQppNJik2WQI0xskAEQNEDBAxQMQAEQNEDBAxQMQAEQNkwc09N9qvcf0v/zfaKHFqybtc31uxZMJlyfoMJwNEDBAxQMQAEQNEDBAxQMQAEQNEDBAxQBbMJp2a2QWyycDPp3nSVhsnA0QMEDFAxAARA0QMEDFAxAARA0QMkIlxjCeZ2WuyxD434vzdko90yTCOkwEiBogYIGKAiAEiBogYIGKAiAEiBohxjJ95Z8ZhYE/HksdYMuMwcxnSzLs4GSBigIgBIgaIGCBigIgBIgaIGCBigIgBMjGb9KQ7dWb2mizZ8rLJY8x8+1bFwEpigIgBIgaIGCBigIgBIgaIGCBigCwYx7jLDTH7mLmHZpMLhE5ZFQPbEQNEDBAxQMQAEQNEDBAxQMQAEQPkeNLqCrjCyQARA0QMEDFAxAARA0QMEDFAxAARA0QMkN+9SwQo6wusOwAAAABJRU5ErkJggg=="
                     alt>
                 </div>
               </div>
@@ -803,13 +815,13 @@
                   苟尔子(本科生)
                 </span>
                 <span id="College">
-                  化学化工学院
+                  数学科学学院
                 </span>
                 <span id="class">
-                  化学18H1
+                  金数1903
                 </span>
                 <span style="font-size: 12px;" id="student">
-                  201830216024
+                  20190908135
                 </span>
               </div>
               <div style="clear: both"></div>
@@ -859,13 +871,13 @@
           </wx-open-launch-weapp>
         </div>
         <div id="addTemp" style="display: block;">
-          <span class="button_sao" style="width:90%;background-color: #2eabff;margin:10px auto 0 auto" onclick="tem()">
+          <span class="button_sao" style="width:90%;background-color: #2eabff;margin:10px auto 0 auto" onclick="changemen()">
             体温上报
           </span>
         </div>
         <div>
           <span class="button_sao" style="width:90%;background-color: #FF8C00;margin:10px auto 0 auto"
-            onclick="temRecord()">
+            onclick="changeren()">
             体温上报记录
           </span>
         </div>
@@ -882,7 +894,8 @@
           </span>
         </div>
         <div>
-          <span class="button_sao" id="btnOkStu" style="width:90%;background-color: #32CD32;margin:10px auto 0 auto">
+          <span class="button_sao" id="btnOkStu" style="width:90%;background-color: #32CD32;margin:10px auto 0 auto"
+          onclick = "location='https://sbcxq.2017.work'">
             <i class="iconfont icon-saoyisao"></i>
             出入扫码
           </span>
@@ -1136,7 +1149,33 @@
 
     }
   </style>
+  <script>
+    function changeren(){
+      var arr = new Array(6);
+      arr[0] = "苟尔子化工1801201830220856化学化工学院";
+      arr[1] = "司巴玐材料1901201930121007材料科学与工程学院";
+      arr[2] = "夏建仁金数1903201909081357数学科学学院";
+      arr[3] = "沈京并金数1803201809080957数学科学学院";
+      arr[4] = "甘范仁材料1801201830121107材料科学与工程学院";
+      arr[5] = "郝秦寿化工1901201930220736化学化工学院";
+      // document.write(arr[3].slice(1,3))
+      // document.write(Math.random());
+      // Math.floor(Math.random()*(5));
+      var ren = arr[Math.floor(Math.random()*(5))];
+      document.getElementById("name").innerText = ren.slice(0,3);
+      document.getElementById("class").innerText = ren.slice(3,9);
+      document.getElementById("student").innerText = ren.slice(9,21);
+      document.getElementById("College").innerText = ren.slice(21);
+    }
+    var time = new Date().Format("yyyy-MM-dd hh:mm:ss");
+    document.getElementById("timeName").innerHTML = "进入时间：" + time;
+    
+    // document.getElementById("name")= "test";
+    // document.getElementById("name").innerText = "test";
+    changeren();
+    // document.getElementById("class")
+  </script>
 </body>
-<div id="__vconsole" class=" v id=" __vconsole" class="vc-toggle"></div>
+
 
 </html>
